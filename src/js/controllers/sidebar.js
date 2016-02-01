@@ -24,9 +24,10 @@ angular.module('copayApp.controllers').controller('sidebarController',
       profileService.signout();
     };
 
-    self.switchWallet = function(wid) {
+    self.switchWallet = function(selectedWalletId, currentWalletId) {
+      if (selectedWalletId == currentWalletId) return;
       self.walletSelection = false;
-      profileService.setAndStoreFocus(wid, function() {
+      profileService.setAndStoreFocus(selectedWalletId, function() {
       });
     };
 
@@ -47,7 +48,7 @@ angular.module('copayApp.controllers').controller('sidebarController',
           n: c.n,
           name: config.aliasFor[c.walletId] || c.walletName,
           id: c.walletId,
-          color: config.colorFor[c.walletId] || '#4A90E2',
+          color: config.colorFor[c.walletId] || '#011F4B',
         };
       });
       self.wallets = lodash.sortBy(ret, 'name');

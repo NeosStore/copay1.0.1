@@ -76,7 +76,7 @@ angular.module('copayApp.services')
       if (!ew) return cb('Could not create backup');
 
       var walletName = (fc.alias || '') + (fc.alias ? '-' : '') + fc.credentials.walletName;
-      var filename = walletName + '-Copaybackup.aes.json';
+      var filename = walletName + '-creditbit-backup.aes.json';
       _download(ew, filename, cb)
     };
     return root;

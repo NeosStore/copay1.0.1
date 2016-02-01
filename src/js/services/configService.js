@@ -12,29 +12,29 @@ angular.module('copayApp.services').factory('configService', function(storageSer
 
     // Bitcore wallet service URL
     bws: {
-      url: 'https://bws.bitpay.com/bws/api',
+      url: 'https://cws.creditbit.org/bws/api',
     },
 
     // wallet default config
     wallet: {
-      requiredCopayers: 2,
-      totalCopayers: 3,
+      requiredCopayers: 1,
+      totalCopayers: 1,
       spendUnconfirmed: true,
       reconnectDelay: 5000,
       idleDurationMin: 4,
       settings: {
-        unitName: 'bits',
-        unitToSatoshi: 100,
-        unitDecimals: 2,
-        unitCode: 'bit',
-        alternativeName: 'US Dollar',
-        alternativeIsoCode: 'USD',
+        unitName: 'CREDIT',
+        unitToSatoshi: 100000000,
+        unitDecimals: 6,
+        unitCode: 'CREDIT',
+        alternativeName: '',
+        alternativeIsoCode: '',
       }
     },
 
-    rates: {
-      url: 'https://insight.bitpay.com:443/api/rates',
-    },
+    //rates: {
+    //  url: 'https://www.cryptopia.co.nz/api/GetMarket/2753',
+    //},
   };
 
   var configCache = null;

@@ -16,13 +16,14 @@ var RateService = function(opts) {
   opts = opts || {};
   self.httprequest = opts.httprequest; // || request;
   self.lodash = opts.lodash;
+  self.isCordova = opts.isCordova;
 
-  self.SAT_TO_BTC = 1 / 1e8;
-  self.BTC_TO_SAT = 1e8;
+  self.SAT_TO_BTC = 1 / 1e6;
+  self.BTC_TO_SAT = 1e6;
   self.UNAVAILABLE_ERROR = 'Service is not available - check for service.isAvailable() or use service.whenAvailable()';
   self.UNSUPPORTED_CURRENCY_ERROR = 'Currency not supported';
 
-  self._url = opts.url || 'https://insight.bitpay.com:443/api/rates';
+  self._url = opts.url || 'http://restapi.leoxchange.com/api/CoinPairRate/GetPairRate?symbol=';
 
   self._isAvailable = false;
   self._rates = {};
@@ -46,18 +47,22 @@ RateService.prototype._fetchCurrencies = function() {
 
   var backoffSeconds = 5;
   var updateFrequencySeconds = 3600;
-  var rateServiceUrl = 'https://bitpay.com/api/rates';
+  var rateServiceUrl = self.isCordova ? 'http://restapi.leoxchange.com/api/CoinPairRate/GetPairRate?symbol=' : '/rates';
 
   var retrieve = function() {
     //log.info('Fetching exchange rates');
     self.httprequest.get(rateServiceUrl).success(function(res) {
       self.lodash.each(res, function(currency) {
-        self._rates[currency.code] = currency.rate;
-        self._alternatives.push({
-          name: currency.name,
-          isoCode: currency.code,
-          rate: currency.rate
-        });
+        var m = currency.Symbol.match(/^LEO\/(.*)/);
+        if (m) {
+          var code = m[1];
+          self._rates[code] = currency.Rate;
+          self._alternatives.push({
+            name: code,
+            isoCode: code,
+            rate: currency.Rate
+          });
+        }
       });
       self._isAvailable = true;
       self.lodash.each(self._queued, function(callback) {
@@ -169,14 +174,15 @@ RateService.prototype.listAlternatives = function() {
   });
 };
 
-angular.module('copayApp.services').factory('rateService', function($http, lodash) {
+angular.module('copayApp.services').factory('rateService', function($http, lodash, isCordova) {
   // var cfg = _.extend(config.rates, {
   //   httprequest: $http
   // });
 
   var cfg = {
     httprequest: $http,
-    lodash: lodash
+    lodash: lodash,
+    isCordova: isCordova
   };
   return RateService.singleton(cfg);
 });

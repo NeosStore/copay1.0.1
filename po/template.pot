@@ -37,13 +37,8 @@ msgstr ""
 msgid "Advanced"
 msgstr ""
 
-#: public/views/create.html
-#: public/views/join.html
-msgid "Advanced options"
-msgstr ""
-
 #: public/views/preferencesAlias.html
-msgid "Alias for"
+msgid "Alias for <i>{{index.walletName}}</i>"
 msgstr ""
 
 #: public/views/splash.html
@@ -75,6 +70,11 @@ msgstr ""
 
 #: public/views/walletHome.html
 msgid "Available Balance"
+msgstr ""
+
+#: public/views/create.html
+#: public/views/join.html
+msgid "BIP32 master extended private key"
 msgstr ""
 
 #: public/views/includes/topbar.html
@@ -255,13 +255,17 @@ msgstr ""
 msgid "Could not update Wallet"
 msgstr ""
 
-#: public/views/create.html
 #: public/views/walletHome.html
 msgid "Create"
 msgstr ""
 
 #: public/views/add.html
+#: public/views/create.html
 msgid "Create new wallet"
+msgstr ""
+
+#: public/views/create.html
+msgid "Create {{requiredCopayers}}-of-{{totalCopayers}} wallet"
 msgstr ""
 
 #: public/views/includes/sidebar.html
@@ -312,6 +316,10 @@ msgstr ""
 #: public/views/modals/tx-details.html
 #: public/views/modals/txp-details.html
 msgid "Details"
+msgstr ""
+
+#: src/js/controllers/index.js
+msgid "Deutsch"
 msgstr ""
 
 #: public/views/preferences.html
@@ -396,13 +404,17 @@ msgstr ""
 msgid "Global settings"
 msgstr ""
 
+#: public/views/disclaimer.html
+msgid "Go back"
+msgstr ""
+
 #: public/views/import.html
 msgid "Have a Backup from Copay v0.9?"
 msgstr ""
 
 #: public/views/create.html
 #: public/views/join.html
-msgid "Hide"
+msgid "Hide Advanced options"
 msgstr ""
 
 #: src/js/controllers/index.js
@@ -413,10 +425,11 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: public/views/create.html
-msgid "If not given, a random key will be generated"
+#: public/views/disclaimer.html
+msgid "I affirm that I have read, understood, and agree with these terms."
 msgstr ""
 
+#: public/views/create.html
 #: public/views/join.html
 msgid "If not given, a secure key will be generated"
 msgstr ""
@@ -484,6 +497,7 @@ msgid "Make a payment to"
 msgstr ""
 
 #: public/views/create.html
+#: public/views/join.html
 msgid "Master extended private key"
 msgstr ""
 
@@ -652,7 +666,7 @@ msgid "Payment to"
 msgstr ""
 
 #: public/views/preferencesDeleteWallet.html
-msgid "Permanently delete this wallet. THIS ACTION CANNONT BE REVERSED"
+msgid "Permanently delete this wallet. THIS ACTION CANNOT BE REVERSED"
 msgstr ""
 
 #: public/views/create.html
@@ -668,8 +682,16 @@ msgstr ""
 msgid "Please, select your backup file"
 msgstr ""
 
+#: src/js/controllers/index.js
+msgid "Portuguese"
+msgstr ""
+
 #: public/views/walletHome.html
 msgid "Preferences"
+msgstr ""
+
+#: public/views/modals/scanner.html
+msgid "QR-Scanner"
 msgstr ""
 
 #: src/js/controllers/index.js
@@ -829,7 +851,7 @@ msgstr ""
 
 #: public/views/create.html
 #: public/views/join.html
-msgid "Show"
+msgid "Show Advanced options"
 msgstr ""
 
 #: src/js/controllers/walletHome.js
@@ -854,6 +876,15 @@ msgstr ""
 msgid "Tap to retry"
 msgstr ""
 
+#: public/views/disclaimer.html
+#: public/views/preferencesAbout.html
+msgid "Terms of Use"
+msgstr ""
+
+#: public/views/create.html
+msgid "Testnet"
+msgstr ""
+
 #: src/js/controllers/walletHome.js
 msgid "The payment was created but could not be completed. Please try again from home screen"
 msgstr ""
@@ -872,6 +903,10 @@ msgstr ""
 
 #: public/views/backup.html
 msgid "The private key for this wallet is encrypted. Exporting a backup will keep the private key encrypted in the backup archive."
+msgstr ""
+
+#: public/views/disclaimer.html
+msgid "The software you are about to use functions as a free, open source, and multi-signature digital wallet. The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your bitcoin.  While the software has undergone beta testing and continues to be improved by feedback from the open-source user and developer community, we cannot guarantee that there will be no bugs in the software. You acknowledge that your use of this software is at your own discretion and in compliance with all applicable laws. You are responsible for safekeeping your passwords, private key pairs, PINs and any other codes you use to access the software. IF YOU LOSE ACCESS TO YOUR COPAY WALLET OR YOUR ENCRYPTED PRIVATE KEYS AND YOU HAVE NOT SEPARATELY STORED A BACKUP OF YOUR WALLET AND CORRESPONDING PASSWORD, YOU ACKNOWLEDGE AND AGREE THAT ANY BITCOIN YOU HAVE ASSOCIATED WITH THAT COPAY  WALLET WILL BECOME INACCESSIBLE. All transaction requests are irreversible.  The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Bitcoin network. To the fullest extent permitted by law, this software is provided “as is” and no representations or warranties can be made of any kind, express or implied, including but not limited to the warranties of merchantability, fitness or a particular purpose and noninfringement. You assume any and all risks associated with the use of the software. In no event shall the authors of the software, employees and affiliates of Bitpay, copyright holders, or BitPay, Inc. be held liable for any claim, damages or other liability, whether in an action of contract, tort, or otherwise, arising from, out of or in connection with the software. We reserve the right to modify this disclaimer from time to time."
 msgstr ""
 
 #: src/js/controllers/copayers.js
@@ -1038,7 +1073,6 @@ msgid "locked by pending payments"
 msgstr ""
 
 #: public/views/copayers.html
-#: public/views/create.html
 #: public/views/walletHome.html
 #: public/views/includes/sidebar.html
 msgid "of"
@@ -1054,10 +1088,6 @@ msgstr ""
 
 #: public/views/walletHome.html
 msgid "too long!"
-msgstr ""
-
-#: public/views/create.html
-msgid "wallet"
 msgstr ""
 
 #: src/js/controllers/importLegacy.js

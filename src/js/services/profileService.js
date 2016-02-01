@@ -135,26 +135,32 @@ angular.module('copayApp.services')
     };
 
     root.loadAndBindProfile = function(cb) {
-      storageService.getProfile(function(err, profile) {
-        if (err) {
-          $rootScope.$emit('Local/DeviceError', err);
-          return cb(err);
-        }
-        if (!profile) {
-          // Migration??
-          storageService.tryToMigrate(function(err, migratedProfile) {
-            if (err) return cb(err);
-            if (!migratedProfile)
-              return cb(new Error('NOPROFILE: No profile'));
-
-            profile = migratedProfile;
-            return root.bindProfile(profile, cb);
-          })
+      storageService.getCopayDisclaimer(function(err, val) {
+        if (!val) {
+          return cb(new Error('NONAGREEDDISCLAIMER: Non agreed disclaimer'));
         } else {
-          $log.debug('Profile read');
-          return root.bindProfile(profile, cb);
-        }
+          storageService.getProfile(function(err, profile) {
+            if (err) {
+              $rootScope.$emit('Local/DeviceError', err);
+              return cb(err);
+            }
+            if (!profile) {
+              // Migration??
+              storageService.tryToMigrate(function(err, migratedProfile) {
+                if (err) return cb(err);
+                if (!migratedProfile)
+                  return cb(new Error('NOPROFILE: No profile'));
 
+                profile = migratedProfile;
+                return root.bindProfile(profile, cb);
+              })
+            } else {
+              $log.debug('Profile read');
+              return root.bindProfile(profile, cb);
+            }
+
+          });
+        }
       });
     };
 
@@ -372,13 +378,13 @@ angular.module('copayApp.services')
       $log.debug('Wallet is encrypted');
       $rootScope.$emit('Local/NeedsPassword', false, function(err2, password) {
         if (err2 || !password) {
-          return cb(err2 || gettext('Password needed'));
+          return cb({message: (err2 || gettext('Password needed'))});
         }
         try {
           fc.unlock(password);
         } catch (e) {
           $log.debug(e);
-          return cb(gettext('Wrong password'));
+          return cb({message: gettext('Wrong password')});
         }
         $timeout(function() {
           if (fc.isPrivKeyEncrypted()) {

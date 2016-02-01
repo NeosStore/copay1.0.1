@@ -1,7 +1,8 @@
 'use strict';
 
-angular.module('copayApp.services').factory('go', function($window, $rootScope, $location, $state, profileService, nodeWebkit) {
+angular.module('copayApp.services').factory('go', function($window, $rootScope, $location, $state, profileService, nodeWebkit, isCordova) {
   var root = {};
+  this.isCordova = isCordova;
 
   var hideSidebars = function() {
     if (typeof document === 'undefined')
@@ -33,8 +34,16 @@ angular.module('copayApp.services').factory('go', function($window, $rootScope, 
     if (nodeWebkit.isDefined()) {
       nodeWebkit.openExternalLink(url);
     }
-    else {
+    else if (isCordova) {
       var ref = window.open(url, '_blank', 'location=no');
+    }
+    else {
+      var a = document.createElement('a');
+      a.setAttribute("href", url);
+      a.setAttribute("target", "_blank");
+      var dispatch = document.createEvent("HTMLEvents");
+      dispatch.initEvent("click", true, true);
+      a.dispatchEvent(dispatch);
     }
   };
 

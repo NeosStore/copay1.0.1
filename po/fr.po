@@ -22,11 +22,11 @@ msgstr "Vous pouvez installer en toute sécurité votre sauvegarde sur un autre 
 
 #: public/views/splash.html
 msgid "A multisignature bitcoin wallet"
-msgstr "Un portefeuille bitcoin multi-signatures"
+msgstr "Un portefeuille creditbit multi-signatures"
 
 #: public/views/preferences.html
 msgid "About Copay"
-msgstr "À propos de Copay"
+msgstr "À propos de creditbit"
 
 #: public/views/modals/txp-details.html
 msgid "Accept"
@@ -45,14 +45,9 @@ msgstr "Adresse"
 msgid "Advanced"
 msgstr "Avancés"
 
-#: public/views/create.html
-#: public/views/join.html
-msgid "Advanced options"
-msgstr "Options avancées"
-
 #: public/views/preferencesAlias.html
-msgid "Alias for"
-msgstr "Alias pour"
+msgid "Alias for <i>{{index.walletName}}</i>"
+msgstr "Alias pour <i>{{index.walletName}}</i>"
 
 #: public/views/splash.html
 msgid "Already have a wallet?"
@@ -85,6 +80,11 @@ msgstr "Êtes-vous certain de vouloir supprimer ce portefeuille ?"
 msgid "Available Balance"
 msgstr "Solde disponible"
 
+#: public/views/create.html
+#: public/views/join.html
+msgid "BIP32 master extended private key"
+msgstr "Clé privée étendue maîtresse BIP32"
+
 #: public/views/includes/topbar.html
 #: public/views/modals/tx-details.html
 #: public/views/modals/txp-details.html
@@ -113,11 +113,11 @@ msgstr "Avant de recevoir des fonds, il est fortement recommandé de sauvegarder
 
 #: public/views/paymentUri.html
 msgid "Bitcoin URI is NOT valid!"
-msgstr "L'URI Bitcoin n'est pas valide !"
+msgstr "L'URI creditbit n'est pas valide !"
 
 #: public/views/walletHome.html
 msgid "Bitcoin address"
-msgstr "Adresse Bitcoin"
+msgstr "Adresse creditbit"
 
 #: public/views/modals/txp-details.html
 msgid "Broadcast Payment"
@@ -185,7 +185,7 @@ msgstr "Confirmations"
 
 #: public/views/modals/copayers.html
 msgid "Copayers"
-msgstr "Copayers"
+msgstr "membres creditbit"
 
 #: public/views/backup.html
 msgid "Copy backup to a safe place"
@@ -263,14 +263,18 @@ msgstr "Impossible d'envoyer le paiement"
 msgid "Could not update Wallet"
 msgstr "Impossible de mettre à jour le portefeuille"
 
-#: public/views/create.html
 #: public/views/walletHome.html
 msgid "Create"
 msgstr "Créer"
 
 #: public/views/add.html
+#: public/views/create.html
 msgid "Create new wallet"
-msgstr "Créer un nouveau portefeuille"
+msgstr "Créer"
+
+#: public/views/create.html
+msgid "Create {{requiredCopayers}}-of-{{totalCopayers}} wallet"
+msgstr "Créer un portefeuille {{requiredCopayers}}-sur-{{totalCopayers}}"
 
 #: public/views/includes/sidebar.html
 msgid "Create, join or import"
@@ -321,6 +325,10 @@ msgstr "Suppression du paiement"
 #: public/views/modals/txp-details.html
 msgid "Details"
 msgstr "Détails"
+
+#: src/js/controllers/index.js
+msgid "Deutsch"
+msgstr "Allemand"
 
 #: public/views/preferences.html
 msgid "Disabled"
@@ -404,14 +412,18 @@ msgstr "Générer une nouvelle adresse"
 msgid "Global settings"
 msgstr "Paramètres globaux"
 
+#: public/views/disclaimer.html
+msgid "Go back"
+msgstr "Retour"
+
 #: public/views/import.html
 msgid "Have a Backup from Copay v0.9?"
 msgstr "Vous avez une sauvegarde de Copay v0.9 ?"
 
 #: public/views/create.html 
 #: public/views/join.html
-msgid "Hide"
-msgstr "Masquer"
+msgid "Hide Advanced options"
+msgstr "Masquer les options avancées"
 
 #: src/js/controllers/index.js
 msgid "History"
@@ -421,10 +433,11 @@ msgstr "Historique"
 msgid "Home"
 msgstr "Accueil"
 
-#: public/views/create.html
-msgid "If not given, a random key will be generated"
-msgstr "Si non spécifié, une clé aléatoire sera générée"
+#: public/views/disclaimer.html
+msgid "I affirm that I have read, understood, and agree with these terms."
+msgstr "Je confirme que j'ai lu, compris et suis d'accord avec ces conditions."
 
+#: public/views/create.html
 #: public/views/join.html
 msgid "If not given, a secure key will be generated"
 msgstr "Si non spécifié, une clé sécurisée sera générée"
@@ -436,7 +449,7 @@ msgstr "Importer"
 #: public/views/import.html
 #: public/views/splash.html
 msgid "Import backup"
-msgstr "Importer une sauvegarde"
+msgstr "Importer la sauvegarde"
 
 #: public/views/importLegacy.html
 msgid "Import from the Cloud?"
@@ -448,7 +461,7 @@ msgstr "Importer ici"
 
 #: public/views/add.html
 msgid "Import wallet"
-msgstr "Importer un portefeuille"
+msgstr "Importer"
 
 #: public/views/import.html
 msgid "Importing wallet..."
@@ -473,7 +486,7 @@ msgstr "Rejoindre"
 
 #: public/views/add.html
 msgid "Join shared wallet"
-msgstr "Rejoindre un portefeuille partagé"
+msgstr "Rejoindre"
 
 #: public/views/join.html
 msgid "Joining Wallet..."
@@ -492,6 +505,7 @@ msgid "Make a payment to"
 msgstr "Faire un paiement à"
 
 #: public/views/create.html
+#: public/views/join.html
 msgid "Master extended private key"
 msgstr "Clé privée étendue maîtresse"
 
@@ -525,7 +539,7 @@ msgstr "Portefeuille multi-signatures"
 
 #: public/views/walletHome.html
 msgid "My Bitcoin address"
-msgstr "Mon adresse Bitcoin"
+msgstr "Mon adresse creditbit"
 
 #: public/views/paymentUri.html
 msgid "Network"
@@ -585,7 +599,7 @@ msgstr "Collez l'invitation ici"
 
 #: public/views/import.html
 msgid "Paste the backup plain text code"
-msgstr "Coller le code texte de sauvegarde"
+msgstr "Collez le code texte de sauvegarde"
 
 #: public/views/modals/paypro.html
 msgid "Pay To"
@@ -609,11 +623,11 @@ msgstr "Proposition de paiement rejetée"
 
 #: src/js/services/notificationsService.js
 msgid "Payment Proposal Rejected by Copayer"
-msgstr "Proposition de paiement rejetée par les Copayer"
+msgstr "Proposition de paiement rejetée par les membre creditbit"
 
 #: src/js/services/notificationsService.js
 msgid "Payment Proposal Signed by Copayer"
-msgstr "Proposition de paiement signée par les Copayers"
+msgstr "Proposition de paiement signée par les membre creditbit"
 
 #: public/views/walletHome.html
 msgid "Payment Proposals"
@@ -657,7 +671,7 @@ msgid "Payment to"
 msgstr "Paiement à"
 
 #: public/views/preferencesDeleteWallet.html
-msgid "Permanently delete this wallet. THIS ACTION CANNONT BE REVERSED"
+msgid "Permanently delete this wallet. THIS ACTION CANNOT BE REVERSED"
 msgstr "Supprimer définitivement ce portefeuille. CETTE ACTION NE PEUT PAS ÊTRE ANNULÉE"
 
 #: public/views/create.html
@@ -673,9 +687,17 @@ msgstr "Veuillez saisir les champs requis"
 msgid "Please, select your backup file"
 msgstr "Veuillez sélectionner votre fichier de sauvegarde"
 
+#: src/js/controllers/index.js
+msgid "Portuguese"
+msgstr "Portugais"
+
 #: public/views/walletHome.html
 msgid "Preferences"
 msgstr "Préférences"
+
+#: public/views/modals/scanner.html
+msgid "QR-Scanner"
+msgstr "QR-Scanner"
 
 #: src/js/controllers/index.js
 msgid "Receive"
@@ -707,7 +729,7 @@ msgstr "Rejet du paiement"
 
 #: public/views/preferencesAbout.html
 msgid "Release Information"
-msgstr "Libérer l'information"
+msgstr "Informations de version"
 
 #: public/views/backup.html 
 #: public/views/includes/password.html
@@ -775,7 +797,7 @@ msgstr "Sélectionnez le nombre de signatures requises"
 
 #: public/views/create.html
 msgid "Select total number of copayers"
-msgstr "Sélectionnez le nombre total de copayers"
+msgstr "Sélectionnez le nombre total de membres creditbit"
 
 #: public/views/walletHome.html
 #: public/views/includes/transaction.html
@@ -821,8 +843,8 @@ msgid "Share invitation"
 msgstr "Partager l'invitation"
 
 #: public/views/copayers.html
-msgid "Share this secret with your copayers"
-msgstr "Partagez ce secret avec vos copayers"
+msgid "Share this invitation with your copayers"
+msgstr "Partagez cette invitation avec vos membres creditbit"
 
 #: public/views/walletHome.html
 msgid "Share this wallet address to receive payments. To protect your privacy, new addresses are generated automatically once you use them."
@@ -834,8 +856,8 @@ msgstr "Portefeuille partagé"
 
 #: public/views/create.html
 #: public/views/join.html
-msgid "Show"
-msgstr "Montrer"
+msgid "Show Advanced options"
+msgstr "Montrer les options avancées"
 
 #: src/js/controllers/walletHome.js
 msgid "Signing payment"
@@ -863,6 +885,15 @@ msgstr "Succès"
 msgid "Tap to retry"
 msgstr "Tapez pour réessayer"
 
+#: public/views/disclaimer.html
+#: public/views/preferencesAbout.html
+msgid "Terms of Use"
+msgstr "Conditions d'utilisation"
+
+#: public/views/create.html
+msgid "Testnet"
+msgstr "Testnet"
+
 #: src/js/controllers/walletHome.js
 msgid "The payment was created but could not be completed. Please try again from home screen"
 msgstr "Le paiement a été créé mais n'a pas pu être achevé. Veuillez réessayer depuis l'écran d'accueil"
@@ -879,6 +910,10 @@ msgstr "Le paiement a été supprimé par le créateur"
 msgid "The private key for this wallet is encrypted. Exporting a backup will keep the private key encrypted in the backup archive."
 msgstr "La clé privée pour ce portefeuille est chiffrée. Exporter une sauvegarde conservera le chiffrement de la clé dans l'archive de sauvegarde."
 
+#: public/views/disclaimer.html
+msgid "The software you are about to use functions as a free, open source, and multi-signature digital wallet. The software does not constitute an account where BitPay or other third parties serve as financial intermediaries or custodians of your bitcoin.  While the software has undergone beta testing and continues to be improved by feedback from the open-source user and developer community, we cannot guarantee that there will be no bugs in the software. You acknowledge that your use of this software is at your own discretion and in compliance with all applicable laws. You are responsible for safekeeping your passwords, private key pairs, PINs and any other codes you use to access the software. IF YOU LOSE ACCESS TO YOUR COPAY WALLET OR YOUR ENCRYPTED PRIVATE KEYS AND YOU HAVE NOT SEPARATELY STORED A BACKUP OF YOUR WALLET AND CORRESPONDING PASSWORD, YOU ACKNOWLEDGE AND AGREE THAT ANY BITCOIN YOU HAVE ASSOCIATED WITH THAT COPAY  WALLET WILL BECOME INACCESSIBLE. All transaction requests are irreversible.  The authors of the software, employees and affiliates of Bitpay, copyright holders, and BitPay, Inc. cannot retrieve your private keys or passwords if you lose or forget them and cannot guarantee transaction confirmation as they do not have control over the Bitcoin network. To the fullest extent permitted by law, this software is provided “as is” and no representations or warranties can be made of any kind, express or implied, including but not limited to the warranties of merchantability, fitness or a particular purpose and noninfringement. You assume any and all risks associated with the use of the software. In no event shall the authors of the software, employees and affiliates of Bitpay, copyright holders, or BitPay, Inc. be held liable for any claim, damages or other liability, whether in an action of contract, tort, or otherwise, arising from, out of or in connection with the software. We reserve the right to modify this disclaimer from time to time."
+msgstr "Le logiciel que vous êtes sur le point d'utiliser fonctionne comme un portefeuille numérique gratuit, open source et multi-signatures. Le logiciel ne constitue pas un compte où BitPay, ou des tiers , sert comme des intermédiaires financiers ou dépositaires de vos bitcoins. Bien que le logiciel a subi des tests bêta et continue d'être amélioré par les commentaires d'utilisateurs et de développeurs de la communauté open source, nous ne pouvons pas garantir qu'il n'y aura plus de bugs dans le logiciel. Vous reconnaissez que votre utilisation de ce logiciel est à votre propre discrétion et est en conformité avec toutes les lois applicables. Vous êtes responsable de la sauvegarde de vos mots de passe, des paires de clés privées, codes PIN et autres codes que vous utilisez pour accéder au logiciel. SI VOUS PERDEZ L'ACCÈS À VOTRE PORTEFEUILLE COPAY OU À VOS CLÉS PRIVÉES CHIFFRÉES ET QUE VOUS N'AVEZ PAS ENTREPOSÉ SÉPARÉMENT UNE SAUVEGARDE DE VOTRE PORTEFEUILLE ET LES MOTS DE PASSE CORRESPONDANT, VOUS RECONNAISSEZ ET ACCEPTEZ QUE LES BITCOINS QUE VOUS AVEZ ASSOCIÉ À CE PORTEFEUILLE COPAY DEVIENNENT INACCESSIBLES. Toutes les transactions sont irréversibles. Les auteurs de ce logiciel, employés et sociétés affiliés à BitPay, détenteurs de droits d'auteur, et BitPay, Inc. ne peuvent pas récupérer vos clés privées ou mots de passe si vous les perdez et ne peuvent pas garantir la confirmation des transactions étant donné qu'ils n'ont pas de contrôle sur le réseau Bitcoin. Dans toute la mesure permise par la loi, ce logiciel est fourni "tel quel" et aucune représentation ou garantie ne peuvent être faites de toute nature, expresse ou implicite, y compris, mais sans s'y limiter, les garanties de qualité marchande, la conformité ou un usage particulier et absent de contrefaçon. Vous assumez tous les risques associés à l'utilisation du logiciel. En aucun cas les auteurs des logiciels, employés et sociétés affiliés de Bitpay, détenteurs de droits d'auteur, ou BitPay, Inc. ne peuvent pas être tenus responsables de toute réclamation, dommages ou autre responsabilité, que ce soit dans une action contractuelle, délictuelle ou autre, découlant ou en étant en connexion avec le logiciel. Nous nous réservons le droit de modifier cette clause de temps à autre."
+
 #: src/js/controllers/copayers.js
 #: src/js/controllers/preferencesDelete.js
 msgid "The wallet \"{{walletName}}\" was deleted"
@@ -890,11 +925,11 @@ msgstr "Il y a une erreur dans la forme"
 
 #: public/views/walletHome.html
 msgid "This wallet is not registered at the given Bitcore Wallet Service (BWS). You can recreate it from the local information."
-msgstr "Ce portefeuille n'est pas enregistré dans le Bitcore Wallet Service (BWS).Vous pouvez le recréer depuis l'information locale."
+msgstr "Ce portefeuille n'est pas enregistré dans le creditbit Wallet Service (CWS).Vous pouvez le recréer depuis l'information locale."
 
 #: public/views/modals/txp-details.html
 msgid "Time"
-msgstr "Temps"
+msgstr "Heure"
 
 #: public/views/walletHome.html
 #: public/views/includes/transaction.html
@@ -954,11 +989,11 @@ msgstr "ATTENTION : Portefeuille non enregistré"
 
 #: public/views/splash.html
 msgid "WELCOME TO COPAY"
-msgstr "BIENVENUE SUR COPAY"
+msgstr "BIENVENUE SUR creditbit"
 
 #: public/views/copayers.html
 msgid "Waiting for copayers"
-msgstr "Attente des copayers"
+msgstr "Attente des membres creditbit"
 
 #: public/views/copayers.html
 msgid "Waiting..."
@@ -1040,10 +1075,9 @@ msgstr "e-mail pour les notifications de portefeuille"
 
 #: public/views/walletHome.html
 msgid "locked by pending payments"
-msgstr "vérrouillé par les paiements en attente"
+msgstr "verrouillés par les paiements en attente"
 
 #: public/views/copayers.html
-#: public/views/create.html
 #: public/views/walletHome.html
 #: public/views/includes/sidebar.html
 msgid "of"
@@ -1060,10 +1094,6 @@ msgstr "paramètres"
 #: public/views/walletHome.html
 msgid "too long!"
 msgstr "trop long !"
-
-#: public/views/create.html
-msgid "wallet"
-msgstr "portefeuille"
 
 #: src/js/controllers/importLegacy.js
 msgid "{{len}} wallets imported. Funds scanning in progress. Hold on to see updated balance"

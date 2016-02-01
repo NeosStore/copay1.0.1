@@ -20,7 +20,7 @@
       </span>
     </li>
 
-    <li class="line-b p20" ng-click="$root.go('preferencesEmail')">
+    <li class="hide line-b p20" ng-click="$root.go('preferencesEmail')">
       <span translate>Email Notifications</span>
       <span class="right text-gray">
         <i class="icon-arrow-right3 size-24 right"></i>
@@ -63,23 +63,15 @@
       </span>
     </li>
 
-    <li class="line-b p20" ng-click="$root.go('preferencesUnit')">
+    <li class="hide line-b p20" ng-click="$root.go('preferencesUnit')">
       <span translate>Unit</span>
       <span class="right text-gray">
         <i class="icon-arrow-right3 size-24 right"></i>
         {{preferences.unitName}}
       </span>
-    </li>
-    <li class="line-b p20" ng-click="$root.go('preferencesAltCurrency')">
-      <span translate>Alternative Currency</span>
-      <span class="right text-gray">
-        <i class="icon-arrow-right3 size-24 right"></i>
-        {{preferences.selectedAlternative.name}}
-      </span>
-    </li>
-    
+    </li>    
     <li class="line-b p20" ng-click="$root.go('preferencesBwsUrl')">
-      <span>Bitcore Wallet Service</span>
+      <span>creditbit Wallet Service</span>
       <span class="text-gray db">
           <i class="icon-arrow-right3 size-24 right"></i>
           {{preferences.bwsurl}}

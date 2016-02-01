@@ -49,7 +49,7 @@ angular.module('copayApp.controllers').controller('backupController',
       }
       var ew = this.getBackup();
       var properties = {
-        subject: 'Copay Wallet Backup: ' + name,
+        subject: 'Wallet Backup: ' + name,
         body: 'Here is the encrypted backup of the wallet ' + name + ': \n\n' + ew + '\n\n To import this backup, copy all text between {...}, including the symbols {}',
         isHtml: false
       };
